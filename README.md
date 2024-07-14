@@ -12,12 +12,13 @@ This is a Flask-based web application that generates certificates from provided 
 
 - Python 3.6 or higher
 - Flask
+- flask-cors
 - pandas
-- numpy
+- openpyxl
 - opencv-python
-- python-docx
 - docx2pdf
-- Flask-CORS
+- numpy
+- requests
 
 ## Usage
 
