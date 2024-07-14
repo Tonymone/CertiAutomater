@@ -43,7 +43,7 @@ This is a Flask-based web application that generates certificates from provided 
    go to project root directory
    npm start
 
-Access the application in your web browser at http://localhost:5000.
+Access the application in your web browser at http://localhost:3000.
 
 Upload MS6.xlsx and BMS.xlsx files containing the necessary data.
 
