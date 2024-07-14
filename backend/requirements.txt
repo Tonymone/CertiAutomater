@@ -1,0 +1,8 @@
+Flask
+flask-cors
+pandas
+openpyxl
+opencv-python
+docx2pdf
+numpy
+requests
