@@ -1,0 +1,171 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* Actual css */
+
+/* General Styles */
+.app-container {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.app-title {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #343a40;
+  font-weight: bold;
+}
+
+.upload-form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-form .form-group {
+  margin-bottom: 15px;
+}
+
+.generate-button {
+  background-color: #007bff;
+  border-color: #007bff;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.generate-button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Spinner Styles */
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* .spinner {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+} */
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #343a40;
+}
+
+
+
+
+svg{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+svg circle{
+  stroke: rgb(19, 16, 215);
+}
+
+.circle{
+  transform-origin: center ;
+}
+#arc1{
+  stroke-dasharray: 30;
+  stroke-dashoffset: 18;
+  animation: 10s -2s rota infinite linear;
+}
+#arc3{
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: 16s -1s rota infinite linear;
+}
+#arc4{
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: 6s -1s rota infinite linear reverse;
+}
+#arc5{
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: 4s 0s rota infinite linear;
+}
+#arc6{
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: 8s 1s rota infinite linear alternate;
+}
+#arc7{
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: 4s 1s rota infinite linear reverse;
+}
+text{
+ fill: #212121;
+ font: bold 24px sans-serif;
+}
+
+@keyframes rota{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
