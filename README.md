@@ -19,6 +19,8 @@ This is a Flask-based web application that generates certificates from provided 
 - docx2pdf
 - numpy
 - requests
+- python-docx
+- comtypes
 
 ## Usage
 
@@ -47,8 +49,10 @@ Access the application in your web browser at http://localhost:3000.
 
 Upload MS6.xlsx and BMS.xlsx files containing the necessary data.
 
+Enter Month and Year, Course name and Semester for generating certificates.
+
 Click on "Generate Certificates" to initiate the process.
 
 Monitor the status updates provided on the webpage.
 
-Once certificates are generated, download the certificates.pdf file.
+Once certificates are generated, certificates.pdf file get downloaded automatically.
