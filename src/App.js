@@ -7,6 +7,9 @@ import { Button, Container, Form, Col, Row, Modal } from 'react-bootstrap';
 function App() {
   const [ms6File, setMs6File] = useState(null);
   const [bmsFile, setBmsFile] = useState(null);
+  const [year, setYear] = useState('');
+  const [courseName, setCourseName] = useState('');
+  const [semester, setSemester] = useState('');
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -17,6 +20,13 @@ function App() {
     } else if (e.target.name === 'bmsFile') {
       setBmsFile(e.target.files[0]);
     }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    if (name === 'year') setYear(value);
+    if (name === 'courseName') setCourseName(value);
+    if (name === 'semester') setSemester(value);
   };
 
   const pollStatus = async () => {
@@ -34,6 +44,9 @@ function App() {
     const formData = new FormData();
     formData.append('ms6File', ms6File);
     formData.append('bmsFile', bmsFile);
+    formData.append('year', year);
+    formData.append('courseName', courseName);
+    formData.append('semester', semester);
 
     try {
       const response = await axios.post('http://127.0.0.1:5000/generate-certificates', formData, {
@@ -91,8 +104,7 @@ function App() {
                 <circle id="arc5" className="circle" cx="150" cy="150" r="100" opacity=".89" fill="none" stroke="#632b26" strokeWidth="8" strokeLinecap="square" strokeOpacity=".99213" paintOrder="fill markers stroke" />
                 <circle id="arc6" className="circle" cx="150" cy="150" r="90" opacity=".49" fill="none" stroke="#632b26" strokeWidth="16" strokeLinecap="square" strokeOpacity=".99213" paintOrder="fill markers stroke" />
                 <circle id="arc7" className="circle" cx="150" cy="150" r="90" opacity=".89" fill="none" stroke="#632b26" strokeWidth="8" strokeLinecap="square" strokeOpacity=".99213" paintOrder="fill markers stroke" />
-                <circle id="arc8" className="circle" cx="150" cy="150" r="80" opacity=".79" fill="#4DD0E1"
-                  fillOpacity="0" stroke="#632b26" strokeWidth="8" strokeLinecap="square" strokeOpacity=".99213" paintOrder="fill markers stroke" />
+                <circle id="arc8" className="circle" cx="150" cy="150" r="80" opacity=".79" fill="#4DD0E1" fillOpacity="0" stroke="#632b26" strokeWidth="8" strokeLinecap="square" strokeOpacity=".99213" paintOrder="fill markers stroke" />
               </svg>
               <p className="loading-text">{status}</p>
             </div>
@@ -105,6 +117,18 @@ function App() {
               <Form.Group controlId="formBmsFile">
                 <Form.Label>Upload BMS Excel File</Form.Label>
                 <Form.Control type="file" name="bmsFile" onChange={handleFileChange} />
+              </Form.Group>
+              <Form.Group controlId="formYear">
+                <Form.Label>Enter Month and Year</Form.Label>
+                <Form.Control type="text" name="year" value={year} onChange={handleInputChange} />
+              </Form.Group>
+              <Form.Group controlId="formCourseName">
+                <Form.Label>Enter Course Name</Form.Label>
+                <Form.Control type="text" name="courseName" value={courseName} onChange={handleInputChange} />
+              </Form.Group>
+              <Form.Group controlId="formSemester">
+                <Form.Label>Enter Semester Number</Form.Label>
+                <Form.Control type="text" name="semester" value={semester} onChange={handleInputChange} />
               </Form.Group>
               <Button variant="primary" type="submit" className="generate-button">
                 Generate Certificates
