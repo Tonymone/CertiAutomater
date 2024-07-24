@@ -6,3 +6,5 @@ opencv-python
 docx2pdf
 numpy
 requests
+python-docx
+comtypes
