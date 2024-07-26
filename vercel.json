@@ -1,24 +1,27 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "backend/wsgi.py",
-      "use": "@vercel/python",
-      "config": { "runtime": "python3.6" }
-    },
-    {
-      "src": "public/**/*",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/backend/wsgi.py"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/public/$1"
-    }
-  ]
+    "version": 2,
+    "builds": [
+        {
+            "src": "backend/index.py",
+            "use": "@vercel/python"
+        },
+        {
+            "src": "public/*",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "src/**/*",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "backend/index.py"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/public/$1"
+        }
+    ]
 }
