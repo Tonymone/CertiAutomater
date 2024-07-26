@@ -1,24 +1,9 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "./wsgi.py",
-      "use": "@vercel/python",
-      "config": { "runtime": "python3.6" }
-    },
-    {
-      "src": "public/**/*",
-      "use": "@vercel/static"
-    }
+    { "src": "app.py", "use": "@vercel/python" }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/backend/wsgi.py"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/public/$1"
-    }
+    { "src": "/(.*)", "dest": "/app.py" }
   ]
 }
