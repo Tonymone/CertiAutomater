@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/CertiAutomater/static/css/main.3a57a9a7.css",
+    "main.js": "/CertiAutomater/static/js/main.7e1c4089.js",
+    "index.html": "/CertiAutomater/index.html",
+    "main.3a57a9a7.css.map": "/CertiAutomater/static/css/main.3a57a9a7.css.map",
+    "main.7e1c4089.js.map": "/CertiAutomater/static/js/main.7e1c4089.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a57a9a7.css",
+    "static/js/main.7e1c4089.js"
+  ]
+}
