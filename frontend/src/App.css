@@ -1,0 +1,156 @@
+.app-container {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.app-title {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #343a40;
+  font-weight: bold;
+}
+
+.upload-form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-form .form-group {
+  margin-bottom: 15px;
+}
+
+.generate-button {
+  background-color: #007bff;
+  border-color: #007bff;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.generate-button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Spinner Styles */
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.spinner-content {
+  position: relative;
+}
+
+.progress-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  margin-top: 20px;
+  font-size: 1.2em;
+  /* color: rgb(157, 157, 157); */
+  color: #343a40;
+}
+
+svg {
+  display: block;
+  margin: auto;
+}
+
+svg circle {
+  stroke: rgb(19, 16, 215);
+}
+
+.circle {
+  transform-origin: center;
+}
+
+#arc1 {
+  stroke-dasharray: 30;
+  stroke-dashoffset: 18;
+  animation: 10s -2s rota infinite linear;
+}
+
+#arc3 {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: 16s -1s rota infinite linear;
+}
+
+#arc4 {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: 6s -1s rota infinite linear reverse;
+}
+
+#arc5 {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: 4s 0s rota infinite linear;
+}
+
+#arc6 {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: 8s 1s rota infinite linear alternate;
+}
+
+#arc7 {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: 4s 1s rota infinite linear reverse;
+}
+
+text {
+  fill: #212121;
+  font: bold 24px sans-serif;
+}
+
+@keyframes rota {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.custom-progress-bar {
+  height: 30px;
+  width: 100px;
+  background-color: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.custom-progress-bar .progress-bar {
+  background-color: #007bff;
+  height: 100%;
+  transition: width 0.6s ease;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
