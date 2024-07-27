@@ -31,7 +31,7 @@ function App() {
 
   const pollStatus = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/status');
+      const response = await axios.get('https://mu-cert-gen-backend.vercel.app/status');
       setStatus(response.data.message);
     } catch (error) {
       console.error("Error fetching status", error);
@@ -49,7 +49,7 @@ function App() {
     formData.append('semester', semester);
 
     try {
-      const response = await axios.post('http://127.0.0.1:5000/generate-certificates', formData, {
+      const response = await axios.post('https://mu-cert-gen-backend.vercel.app/generate-certificates', formData, {
         responseType: 'blob',
       });
       const url = window.URL.createObjectURL(new Blob([response.data]));
@@ -61,7 +61,7 @@ function App() {
       link.remove();
 
       // Delete files after downloading
-      await axios.post('http://127.0.0.1:5000/delete-files');
+      await axios.post('https://mu-cert-gen-backend.vercel.app/delete-files');
       console.log("Files deleted successfully");
 
       setTimeout(() => {
