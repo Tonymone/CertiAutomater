@@ -446,3 +446,6 @@ def convert_to_pdf(input_word_path, output_pdf_path):
     doc.Close()
     word.Quit()
     pythoncom.CoUninitialize()
+
+if __name__ == '__main__':
+    app.run(debug=True)
